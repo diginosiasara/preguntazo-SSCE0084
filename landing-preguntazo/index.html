@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Preguntazo! · Landing de demostración</title>
+<meta name="description" content="Landing de demostración: registro con correo, juego de preguntas y reparto de responsabilidades del equipo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Nunito:wght@400;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio"><i aria-hidden="true">🎯</i><span>PREGUNTAZO<b>!</b></span></a>
+    <nav aria-label="Principal"><a href="#como">Cómo funciona</a><a href="#equipo">Equipo</a><a href="#juego">Juego</a><a href="#ranking">Ranking</a></nav>
+    <a class="btn coral" href="#acceso">Quiero jugar</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero" style="padding-bottom:clamp(32px,6vw,72px)">
+  <div class="wrap">
+    <div>
+      <span class="demo-badge">Demostración de clase</span>
+      <h1>¿Te atreves a <span>jugar</span>?</h1>
+      <p class="lead">Deja tu correo, desbloquea el juego de preguntas y compite en el ranking de tu clase.</p>
+    </div>
+    <div id="acceso" class="sticker">
+      <form id="form" novalidate>
+        <label for="correo">Tu correo para entrar</label>
+        <input id="correo" type="email" autocomplete="email" inputmode="email" placeholder="nombre@ejemplo.com" aria-describedby="e1">
+        <p class="err" id="e1" role="alert"></p>
+        <label class="check"><input id="ok" type="checkbox"><span>He leído la política de privacidad y acepto que se use mi correo solo para darme acceso al juego.</span></label>
+        <p class="err" id="e2" role="alert"></p>
+        <button class="btn" type="submit" style="width:100%">Desbloquear el juego</button>
+        <p class="note">Modo demostración: el correo no se envía ni se guarda en ningún servidor.</p>
+      </form>
+      <div class="ok hidden" id="done">
+        <h2 style="font-size:1.8rem">¡Acceso desbloqueado!</h2>
+        <p style="margin:8px 0 0;font-weight:700">Tu código de acceso de ejemplo:</p>
+        <div class="code">JUEGA-2026</div>
+        <p><a class="btn coral" href="#juego">Ir al juego</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como"><div class="wrap">
+  <h2>Cómo funciona</h2>
+  <p class="sub">Tres pasos, sin instalar nada. Funciona en móvil, tableta y ordenador.</p>
+  <div class="steps">
+    <div class="sticker step"><div class="ic" aria-hidden="true">✉️</div><h3>Regístrate</h3><p>Escribe tu correo y acepta la política de privacidad.</p></div>
+    <div class="sticker step"><div class="ic" aria-hidden="true">🔑</div><h3>Recibe el acceso</h3><p>Solo quien se registra ve el enlace y el código del juego.</p></div>
+    <div class="sticker step"><div class="ic" aria-hidden="true">🏆</div><h3>Juega y compite</h3><p>Responde, suma puntos y mira tu posición en el ranking.</p></div>
+  </div>
+</div></section>
+
+<section id="equipo" class="roles"><div class="wrap">
+  <h2>Quién hace qué</h2>
+  <p class="sub">Cada grupo reparte cuatro roles. Escribe el nombre de quien lo asume y marca las tareas según avancéis.</p>
+  <div class="progress"><span id="pTxt">0 de 12 tareas</span><div class="bar" aria-hidden="true"><i id="pBar"></i></div></div>
+  <div class="tabs" role="tablist" aria-label="Roles del equipo" id="tabs"></div>
+  <div class="sticker panel" id="panel" role="tabpanel" tabindex="0"></div>
+  <div class="matrix"><table>
+    <caption class="hidden">Matriz de responsabilidades</caption>
+    <thead><tr><th scope="col">Entregable</th><th scope="col">Diseño web</th><th scope="col">Formulario y datos</th><th scope="col">Preguntas</th><th scope="col">Legal y seguridad</th></tr></thead>
+    <tbody>
+      <tr><td>Landing page publicada</td><td class="r">Responsable</td><td class="r">Apoya</td><td class="r">–</td><td class="r">Revisa</td></tr>
+      <tr><td>Formulario y hoja de registros</td><td class="r">Apoya</td><td class="r">Responsable</td><td class="r">–</td><td class="r">Revisa</td></tr>
+      <tr><td>Banco de preguntas y juego</td><td class="r">–</td><td class="r">Apoya</td><td class="r">Responsable</td><td class="r">Revisa</td></tr>
+      <tr><td>Privacidad, licencias y seguridad</td><td class="r">Apoya</td><td class="r">Apoya</td><td class="r">Apoya</td><td class="r">Responsable</td></tr>
+    </tbody></table></div>
+</div></section>
+
+<section id="juego" class="game"><div class="wrap">
+  <h2>Prueba el juego</h2>
+  <p class="sub">Tres preguntas de ejemplo. Cada acierto suma 100 puntos y recibes la corrección al instante.</p>
+  <div id="quiz"></div>
+  <div class="score"><span id="score">Puntos: 0</span><button class="btn" id="again" type="button">Jugar otra vez</button></div>
+</div></section>
+
+<section id="ranking"><div class="wrap">
+  <h2>Ranking de la clase</h2>
+  <p class="sub">Datos de ejemplo. Tu puntuación aparece aquí cuando terminas el juego.</p>
+  <ol class="rank" id="rank"></ol>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Preguntazo! · Actividad de clase</span><span>Contenidos con licencia Creative Commons y autoría citada.</span></div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
